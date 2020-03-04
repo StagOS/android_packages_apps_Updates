@@ -19,6 +19,8 @@ package com.stag.ota.download;
 import android.os.SystemClock;
 import android.util.Log;
 
+import org.pixelexperience.ota.misc.Constants;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -65,6 +67,11 @@ public class HttpURLConnectionClient implements DownloadClient {
 
     private static boolean isPartialContentCode(int statusCode) {
         return statusCode == 206;
+    }
+
+    private void setExtraHeaders() {
+        mClient.setRequestProperty("User-Agent", "org.pixelexperience.ota");
+        mClient.setRequestProperty("Current-Build-Timestamp", SystemProperties.get(Constants.PROP_BUILD_DATE, "0"));
     }
 
     @Override

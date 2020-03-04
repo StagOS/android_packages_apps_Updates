@@ -502,12 +502,6 @@ public class UpdaterService extends Service {
         return PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
-    public class LocalBinder extends Binder {
-        public UpdaterService getService() {
-            return UpdaterService.this;
-        }
-    }
-
     private PendingIntent getSuspendInstallationPendingIntent() {
         final Intent intent = new Intent(this, UpdaterService.class);
         intent.setAction(ACTION_INSTALL_SUSPEND);
@@ -520,5 +514,11 @@ public class UpdaterService extends Service {
         intent.setAction(ACTION_INSTALL_RESUME);
         return PendingIntent.getService(this, 0, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    public class LocalBinder extends Binder {
+        public UpdaterService getService() {
+            return UpdaterService.this;
+        }
     }
 }

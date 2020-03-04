@@ -17,15 +17,14 @@
 package com.stag.ota;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.PowerManager;
-import android.preference.PreferenceManager;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.util.TypedValue;
@@ -48,7 +47,6 @@ import com.stag.ota.misc.Utils;
 import com.stag.ota.model.UpdateInfo;
 import com.stag.ota.model.UpdateStatus;
 
-import android.app.AlertDialog;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuPopupHelper;
@@ -408,7 +406,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setNegativeButton(android.R.string.cancel, null);
     }
 
-    private void setupOptionMenuListeners(UpdateInfo update, final boolean canDelete, ViewHolder viewHolder){
+    private void setupOptionMenuListeners(UpdateInfo update, final boolean canDelete, ViewHolder viewHolder) {
         viewHolder.itemView.setOnLongClickListener(v -> {
             startActionMode(update, canDelete, viewHolder.mBuildDate);
             return true;
@@ -444,7 +442,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         return new AlertDialog.Builder(mActivity, R.style.AppTheme_AlertDialogStyle)
                 .setTitle(R.string.apply_update_dialog_title)
-                .setMessage(mActivity.getString(resId,update.getName(),
+                .setMessage(mActivity.getString(resId, update.getName(),
                         mActivity.getString(android.R.string.ok)) + extraMessage)
                 .setPositiveButton(android.R.string.ok,
                         (dialog, which) -> Utils.triggerUpdate(mActivity, downloadId))

@@ -29,12 +29,12 @@ public final class Constants {
     public static final String PREF_INSTALL_PACKAGE_PATH = "install_package_path";
     public static final String PREF_INSTALL_AGAIN = "install_again";
     public static final String PREF_INSTALL_NOTIFIED = "install_notified";
+    public static final String DOWNLOAD_PATH = "/data/system_updates/";
     static final String PROP_AB_DEVICE = "ro.build.ab_update";
     static final String PROP_DEVICE = "ro.stag.device";
     static final String PROP_BUILD_VERSION = "ro.stag.version";
     static final String PROP_VERSION_CODE = "ro.stag.ota.version_code";
     static final String OTA_URL = "https://raw.githubusercontent.com/StagOS-Devices/OTA/sx/%s.json";
     static final String DOWNLOAD_WEBPAGE_URL = "https://raw.githubusercontent.com/StagOS-Devices/OTA/sx/%s.md";
-    public static final String DOWNLOAD_PATH = "/data/system_updates/";
     static final String EXPORT_PATH = "StagOS-Updates/";
 }

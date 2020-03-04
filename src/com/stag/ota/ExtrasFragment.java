@@ -3,18 +3,17 @@ package com.stag.ota;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceCategory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.stag.ota.model.UpdateInfo;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import org.pixelexperience.ota.model.UpdateInfo;
 
 public class ExtrasFragment extends Fragment {
 
@@ -89,7 +88,7 @@ public class ExtrasFragment extends Fragment {
         Snackbar.make(getActivity().findViewById(R.id.main_container), stringId, duration).show();
     }
 
-    private void openUrl(String url){
+    private void openUrl(String url) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
