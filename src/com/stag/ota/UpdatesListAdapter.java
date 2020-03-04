@@ -48,7 +48,7 @@ import com.stag.ota.misc.Utils;
 import com.stag.ota.model.UpdateInfo;
 import com.stag.ota.model.UpdateStatus;
 
-import androidx.appcompat.app.AlertDialog;
+import android.app.AlertDialog;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuPopupHelper;
