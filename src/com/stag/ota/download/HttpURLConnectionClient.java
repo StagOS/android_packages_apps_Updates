@@ -18,8 +18,9 @@ package com.stag.ota.download;
 
 import android.os.SystemClock;
 import android.util.Log;
+import android.os.SystemProperties;
 
-import org.pixelexperience.ota.misc.Constants;
+import com.stag.ota.misc.Constants;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -70,7 +71,7 @@ public class HttpURLConnectionClient implements DownloadClient {
     }
 
     private void setExtraHeaders() {
-        mClient.setRequestProperty("User-Agent", "org.pixelexperience.ota");
+        mClient.setRequestProperty("User-Agent", "com.stag.ota");
         mClient.setRequestProperty("Current-Build-Timestamp", SystemProperties.get(Constants.PROP_BUILD_DATE, "0"));
     }
 

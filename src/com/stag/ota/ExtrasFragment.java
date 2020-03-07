@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import org.pixelexperience.ota.model.UpdateInfo;
+import com.stag.ota.model.UpdateInfo;
 
 public class ExtrasFragment extends Fragment {
 
